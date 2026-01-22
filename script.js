@@ -4,45 +4,61 @@ const fruits = [
   {
     "name": "виноград",
     "image": "img/vinograd.jpg",
-    "description": "Витамины: A, C, клетчатка<br>Польза: пищеварение, иммунитет"
+    "description": "Витамины: A, C, клетчатка<br>Польза: пищеварение, иммунитет",
+    "price": "1 680 т/кг",
+    "korzin": "Добавить в корзину"
   },
   {
   "name": "гранат",
   "image": "img/granat2.jpg",
-  "description": "Витамины: калий, магний<br>Польза: энергия, настроение"
+  "description": "Витамины: калий, магний<br>Польза: энергия, настроение",
+  "price": "1 200 т/кг" ,
+    "korzin": "Добавить в корзину"
   },
   {
   "name": "вишня",
   "image": "img/vishenka.jpg",
-  "description": "Витамины: C, A<br>Польза: восстановление, вкус"
+  "description": "Витамины: C, A<br>Польза: восстановление, вкус",
+  "price": "1 800 т/кг",
+  "korzin": "Добавить в корзину"
   },
 
   {
     "name": "яблоко",
     "image": "img/apple.jpg",
-    "description": "Витамины: C, K, клетчатка<br>Польза: сердце, пищеварение"
+    "description": "Витамины: C, K, клетчатка<br>Польза: сердце, пищеварение",
+    "price": "1 200 т/кг",
+   "korzin": "Добавить в корзину"
   },
 
   {
     "name": "кокос",
     "image": "img/coconut.jpg",
-    "description": "Витамины: C, E, группы B<br>Польза: энергия, сердце, пищеварение"
+    "description": "Витамины: C, E, группы B<br>Польза: энергия, сердце, пищеварение",
+    "price": "1 200 т/кг",
+    "korzin": "Добавить в корзину"
   },
   {
     "name": "киви",
     "image": "img/civi.png",
-    "description": "Витамины: C, K, E<br>Польза: иммунитет, пищеварение, кожа"
+    "description": "Витамины: C, K, E<br>Польза: иммунитет, пищеварение, кожа",
+    "price": "1 900 т/кг",
+    "korzin": "Добавить в корзину"
   },
 
   {
     "name": "персик",
     "image": "img/persik.jpg",
-    "description": "Витамины: A, C, E<br>Польза: зрение, кожа"
+    "description": "Витамины: A, C, E<br>Польза: зрение, кожа",
+    "price": "1 100 т/кг",
+    "korzin": "Добавить в корзину"
   },
   {
     "name": "мандарин",
     "image": "img/mandarin.jpg",
-    "description": "Витамины: C, A, B1<br>Польза: иммунитет, зрение"
+    "description": "Витамины: C, A, B1<br>Польза: иммунитет, зрение",
+    "price": "1 522 т/кг",
+    "korzin": "Добавить в корзину"
   },
 ];
 
@@ -70,13 +86,25 @@ function renderFruits() {
 
     const p = document.createElement('p');
     p.innerHTML = f.description;
-      
 
+    const price = document.createElement('price');
+    price.className = 'fruit-price';
+    price.textContent = f.price;
+
+    const korzin = document.createElement('button'); //кнопка создавать етилди
+    korzin.className = 'korzinbut';
+    korzin.textContent = f.korzin;
+
+
+    
     desc.appendChild(h3);
     desc.appendChild(p);
     box.appendChild(img);
     box.appendChild(desc);
+    desc.appendChild(price);
+    desc.appendChild(korzin);
     container.appendChild(box);
+    
   });
 }
 
@@ -101,7 +129,9 @@ function filterFruits() {
     const name = (b.querySelector('.fruit-name')?.textContent || '').toLowerCase();
     const desc = (b.querySelector('.fruit-description')?.textContent || '').toLowerCase();
     const alt = (b.querySelector('img')?.alt || '').toLowerCase();
-    const match = name.includes(q) || desc.includes(q) || alt.includes(q);
+    const price = (b.querySelector('.fruit-price')?.textContent || '').toLowerCase();
+    const korzin = (b.querySelector('.korzinbut')?.textContent || '').toLowerCase();
+    const match = name.includes(q) || desc.includes(q) || alt.includes(q) || price.includes(q) || korzin.includes(q);
     b.style.display = match ? '' : 'none';
   });
 }
@@ -112,3 +142,4 @@ renderFruits();
 button.addEventListener('click', filterFruits);
 input.addEventListener('keyup', (e) => { if (e.key === 'Enter') filterFruits(); });
 input.addEventListener('input', () => { if (!input.value.trim()) getBoxes().forEach(b => b.style.display = ''); });
+ 

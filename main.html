@@ -7,6 +7,8 @@
   <link rel="shortcut icon" href="img/lol.png" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
 
+  <!--SWIPER CSS  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <!--FONT-->
   <link rel="preconnect" href="https://fonts.googleapis.com" class="fontbe">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,17 +28,17 @@
     <div>
       <nav>
         <ul class="menu">
-          <li><a href="#home">Главная
-
-
-          </a></li>
+          <li><a href="#home">Главная</a></li>
           <li><a href="#about">О нас</a></li>
-          <li><a href="#fructs">Фрукты, характеристика</a></li>
+          <li><a href="#fructs">Фрукты</a></li>
           <li><a href="#promo">Акции</a></li>
+          <li><a href="#korzina">Корзина</a></li>
+          <li><a href="login.html">Войти</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
   <!--GLAVNAYA-->
   <section id="home" class="hhom">
     <div class="homes">
@@ -67,56 +69,85 @@
 
   <!--Фрукты-->
   <!--ALMA-->
+
+
   <section id="fructs" class="fruc">
     <main>
       <!--SEACRH-->
-      <div class="searchfr">
-        <input type="text" id="search" placeholder="Напиши называние фрукт">
-        <button id="foundb">Найти</button>
-         </div>
-      <div class="fruct-container">
+      <div class="fons">
+        <div class="searchfr">
 
-
-
-
-
-
-        
-        
+          <input type="text" id="search" placeholder="Напиши называние фрукт">
+          <button id="foundb">Найти</button>
         </div>
-      
+        <div class="fruct-container">
+          <button class="kk">КУПИТЬ</button>
+
+
+
+          <!--Карточки фруктов будут добавлены здесь с помощью JavaScript-->
+
+
+
+
+
+
+
+
+        </div>
+      </div>
     </main>
   </section>
 
-
   <!--Акции-->
-<section id="promotion" class="promo-page">
-<div class="aksia">
-<h2 class="promotext">АКЦИИ</h2>
-<div class="promo-container">
-<img src="img/coconut.jpg">
-<div class="promo-description">
-<p><strong>Скидка на кокосы!</strong> </p>
-  <p>Только в этом месяце! При покупке двух кокосов третий в подарок. Наслаждайтесь свежестью и пользой кокосов вместе с друзьями и семьёй!</p>
-</div>
-</div>
+  <section id="promo" class="promo-page">
+    <div class="background">
+      <div class="aksia">
+        <h2 class="promotext">АКЦИИ</h2>
+        <div class="promo-container">
+          <img src="img/coconut.jpg">
+          <div class="promo-description">
 
-<div class="promo-container">
-  <img src="img/mandarin.jpg">
-<div class="promo-description">
-  <p><strong>Сезонные скидки на мандарины!</strong> </p>
-    <p>Порадуйте себя и своих близких сочными мандаринами по специальной цене! Только до конца месяца скидка 20% на все мандарины в нашем магазине.</p>
-</div>
-</div>
-</div>
+            <p class="pr20"><strong> -20% </strong></p>
+            <p>Только в этом месяце! При покупке двух кокосов третий в подарок. Наслаждайтесь свежестью и пользой
+              кокосов вместе с друзьями и семьёй!</p>
+            <button class="korzin">КУПИТЬ</button>
+          </div>
 
+        </div>
 
-</section>
+        <div class="promo-container">
+          <img src="img/mandarin.jpg">
+          <div class="promo-description">
+            <p class="pr20"><strong> -35% </strong></p>
+            <p>Порадуйте себя и своих близких сочными мандаринами по специальной цене! Только до конца месяца скидка
+              -35%.</p>
+            <button class="korzin">КУПИТЬ</button>
+          </div>
+        </div>
 
-  <script src="script.js"></script>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- KORZINA-->
+  <section id="korzina" class="korzina-page">
+    <div class="korzina-container">
+      <h2 class="korzina-title">КОРЗИНА</h2>
+      <div class="korzina-items" id="korzina-items">
+        <!----> <!-- Товары в корзине будут добавлены здесь с помощью JavaScript
+    </div>
+    <div class="korzina-total">
+      <h3>Итого: <span id="total-price">5</span> тг</h3>
+      <button id="checkout-button" class="checkout-button">Оформить заказ</button>
+    </div> -->
+      </div>
+    </div>
+  </section>
   <footer>
     <div class="foot">
-      <div class="ps">
+      <div class="foot-container">
         <p>© 2025 Каталог Фруктов. Все права защищены.</p>
       </div>
       <div class="text2">
@@ -125,6 +156,11 @@
       </div>
     </div>
   </footer>
-</body>
+
+  <!--SWIPER JS-->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <!--JS-->
+  <script src="script.js"></script>
+  </body>
 
 </html>
