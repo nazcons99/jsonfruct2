@@ -143,3 +143,25 @@ button.addEventListener('click', filterFruits);
 input.addEventListener('keyup', (e) => { if (e.key === 'Enter') filterFruits(); });
 input.addEventListener('input', () => { if (!input.value.trim()) getBoxes().forEach(b => b.style.display = ''); });
  
+
+  document.querySelector('#searchfr')
+    addEventListener('input', filterList);
+
+    function filterList(){
+      const searchInputv = document.querySelector
+      ('#searchfr');
+      const filter = searchInputv.value.toLowerCase();
+      const listItems = document.querySelectorAll
+      ('.foundb');
+
+      listItems.forEach((item) =>{
+        let text = item.textContent;
+        if(text.toLowerCase().includes
+        (filter.toLowerCase())){
+          item.style.display = '';
+        }
+        else{
+          item.style.display = 'none';
+        }
+      });
+    }
