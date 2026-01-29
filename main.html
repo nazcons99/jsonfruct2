@@ -15,6 +15,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap"
     rel="stylesheet">
+
+    <!--REMIXICON-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
 </head>
 
 <body>
@@ -22,9 +26,8 @@
     <!--LOGOTIP AND TEXT-->
     <div class="logotip">
       <img src="img/logowithoutfon.png" class="phos">
-      <div class="name">FruFresh</div>
+      <h6 class="name">FruFresh</div>
 
-    </div>
     <div>
       <nav>
         <ul class="menu">
@@ -33,17 +36,21 @@
           <li><a href="#fructs">Фрукты</a></li>
           <li><a href="#promo">Акции</a></li>
           <li><a href="#korzina">Корзина</a></li>
-          <li><a href="login.html">Войти</a></li>
-        </ul>
+         <!--ICON PROFILE--> </ul>
+         <div class="profile-icon">
+         <li><a href="login.html"><i class="ri-account-circle-fill"></i></a></li>
+        </div>
+       
       </nav>
     </div>
+     </div>
   </header>
 
   <!--GLAVNAYA-->
   <section id="home" class="hhom">
     <div class="homes">
 
-      <h2>УЗНАЙТЕ ВСЁ О ФРУКТАХ: ИХ СВОЙСТВА, ПОЛЬЗА И АКТУАЛЬНЫЕ АКЦИИ</h2>
+      <h2 class="hometext">УЗНАЙТЕ ВСЁ О ФРУКТАХ: ИХ СВОЙСТВА, ПОЛЬЗА И АКТУАЛЬНЫЕ АКЦИИ</h2>
       <a href="#fructs" class="button-fr">Посмотреть на фрукты</a>
     </div>
 
@@ -67,10 +74,42 @@
     </div>
   </section>
 
-  <!--Фрукты-->
-  <!--ALMA-->
+
+   <!--Акции-->
+  <section id="promo" class="promo-page">
+    <div class="background">
+      <div class="aksia">
+        <h2 class="promotext">АКЦИИ НА ТОВАРЫ</h2>
+        <div class="promo-container">
+          <img src="img/coconut.jpg">
+          <div class="promo-description">
+
+            <p class="pr20"><strong> -20% </strong></p>
+            <p>Только в этом месяце! При покупке двух кокосов третий в подарок. Наслаждайтесь свежестью и пользой
+              кокосов вместе с друзьями и семьёй!</p>
+            <button class="korzin">КУПИТЬ</button>
+          </div>
+
+        </div>
+
+        <div class="promo-container">
+          <img src="img/mandarin.jpg">
+          <div class="promo-description">
+            <p class="pr20"><strong> -35% </strong></p>
+            <p>Порадуйте себя и своих близких сочными мандаринами по специальной цене! Только до конца месяца скидка
+              -35%.</p>
+            <button class="korzin">КУПИТЬ</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
 
 
+
+  <!--Фрукты  container-->
   <section id="fructs" class="fruc">
     <main>
       <!--SEACRH-->
@@ -99,38 +138,7 @@
     </main>
   </section>
 
-  <!--Акции-->
-  <section id="promo" class="promo-page">
-    <div class="background">
-      <div class="aksia">
-        <h2 class="promotext">АКЦИИ</h2>
-        <div class="promo-container">
-          <img src="img/coconut.jpg">
-          <div class="promo-description">
-
-            <p class="pr20"><strong> -20% </strong></p>
-            <p>Только в этом месяце! При покупке двух кокосов третий в подарок. Наслаждайтесь свежестью и пользой
-              кокосов вместе с друзьями и семьёй!</p>
-            <button class="korzin">КУПИТЬ</button>
-          </div>
-
-        </div>
-
-        <div class="promo-container">
-          <img src="img/mandarin.jpg">
-          <div class="promo-description">
-            <p class="pr20"><strong> -35% </strong></p>
-            <p>Порадуйте себя и своих близких сочными мандаринами по специальной цене! Только до конца месяца скидка
-              -35%.</p>
-            <button class="korzin">КУПИТЬ</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
+ 
   <!-- KORZINA-->
   <section id="korzina" class="korzina-page">
     <div class="korzina-container">
