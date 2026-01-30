@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,602;1,602&family=Unbounded:wght@200..900&display=swap');
 body {
   font-family: 'Cambria', sans-serif;
-  color: #ffffff;
   background-color: #ffffff;
-   margin: 0; /* короче header полностью экранды полностью жабу ушин*/
+  margin: 0;
+  /* короче header полностью экранды полностью жабу ушин*/
 
 }
 
@@ -24,13 +26,15 @@ body {
 }
 
 .name {
-  color:#cd940d;
+  color:rgb(255, 172, 38);
   font-size: larger;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-style: inherit;
   font-weight: 600;
-  margin: 2px; /*орналасуы*/
-  font-size: 15px; /*текст узындыгы*/
+  margin: 2px;
+  /*орналасуы*/
+  font-size: 15px;
+  /*текст узындыгы*/
 }
 
 header {
@@ -38,15 +42,17 @@ header {
   background-color: #ffffff;
   padding: 10px 0;
   box-shadow: 0 2px 10px rgba(65, 65, 65, 0.1);
-  gap: 470px; /*орналасуы*/
+  gap: 470px;
+  /*орналасуы*/
 }
 
-.profile{
+.profile {
   display: block;
   font-size: 1.5rem;
-  background-color: #cd940d;
+  color:#000000;
   padding: 1px;
 }
+
 nav {
 
   vertical-align: bottom;
@@ -67,16 +73,14 @@ nav {
 .menu {
   display: flex;
   list-style: none;
-  gap: 1px;
+  gap: 3px;
   margin: 0;
   padding: 0;
-
-
 }
 
 .menu a {
-  text-transform: uppercase;
-  color:#cd940d;
+  text-transform: lowercase;
+  color:#E86CA4;
   text-decoration: none;
   padding: 2px 4px;
   border-radius: 5px;
@@ -86,31 +90,38 @@ nav {
   font-weight: 500;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0.3);
 }
-.login-out{
-  color:#e9190f;
+
+.login-out {
+  color: #e9190f;
 }
 
-.menu a:hover,
-.menu.active {
-  background-color:#5a6a0a;
+.menu>li:hover {
+  background-color:#ff3d95;
   color: rgb(255, 255, 255);
+  border-radius: 5px;
 }
+
+.menu a:hover {
+  color: white;
+}
+
 /*icon profile*/
-.profile-icon{
+.profile-icon {
   display: block;
   text-decoration: none;
   list-style: none;
   float: right;
 }
+
 .homes {
   position: relative;
-  background-image: url(./img/hom4.JPG);
+  background-image: url(https://i.pinimg.com/1200x/fb/ad/a6/fbada6e9331f21381fd6f137f51bc79d.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   width: 100%;
   height: 100vh;
   padding: 250px;
- block-size: 100px;
+  block-size: 100px;
   display: inline-block;
   vertical-align: bottom;
   height: 100vh;
@@ -128,31 +139,35 @@ nav {
   font-weight: 500;
 }
 
-.hometext{
+.hometext {
   display: block;
-  color:#0dcd0d;
+  color:#ffffff;
   text-transform: uppercase;
-  text-align: right;
-  justify-content: right;
-  float: right;
+  text-align: center;
+  
 
+}
+.hometext{
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .button-fr {
-
+  text-transform:uppercase;
   margin-top: 5px;
   padding: 12px 30px;
-  background-color: #cd940d;
+  background-color: #E86CA4;
   color: white;
   text-decoration: none;
-  border-radius: 15px;
+  border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
 }
 
 .button-fr:hover {
-  background-color: #E4EFE7;
-  color:#cbcbcb;
+  background-color:#ffd7e9;
+  color: #ff0000;
 }
 
 .about-us {
@@ -162,14 +177,15 @@ nav {
   background-size: cover;
   height: 90vh;
   width: 100%;*/
- height:30vh;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
   /*текст прям центрде турады*/
   padding: 20px;
-  
+
 }
+
 /*.about-us:before {
   content: '';
   position: absolute;
@@ -183,12 +199,13 @@ nav {
 }*/
 
 .frush {
-  color: rgb(92, 28, 28);
-  text-decoration: none; /*текст астындагы сызыкты алу ушин*/
+  color:rgb(255, 172, 38);
+  text-decoration: none;
+  /*текст астындагы сызыкты алу ушин*/
 }
 
 .frush:hover {
-  color: #e56b00;
+  color:#c7c6c6;
 }
 
 .about-text {
@@ -204,24 +221,27 @@ nav {
   padding: 20px;
 }
 
-  .searchfr{
-    
-    border-radius: 8px;
-    padding:5px;
-    width: 220px;
-    margin: 20px auto; /*страницанын басымен расстояниеси*/
-    border:none;
-  }
+.searchfr {
 
-  .but1{
-    background-color:#e9190f;
-    color:#E4EFE7;
-    border-radius: 6px;
-  }
-.fons{
+  border-radius: 8px;
+  padding: 5px;
+  width: 220px;
+  margin: 20px auto;
+  /*страницанын басымен расстояниеси*/
+  border: none;
+}
+
+.but1 {
+  background-color: #e9190f;
+  color: #E4EFE7;
+  border-radius: 6px;
+}
+
+.fons {
   background-color: #ffffff;
 }
-  .fruct-container {
+
+.fruct-container {
   height: 120vh;
   width: 100%;
   display: flex;
@@ -268,7 +288,8 @@ nav {
   justify-content: center;
   align-items: flex-start;
   gap: 16px;
-  max-width: 1200px; /*канша сурет сиятыны*/
+  max-width: 1200px;
+  /*канша сурет сиятыны*/
   margin: 0 auto;
   padding: 20px;
 }
@@ -283,8 +304,8 @@ nav {
   font-weight: 500;
 }
 
-.fruit-price{
-  color:#ff0000;
+.fruit-price {
+  color: #ff0000;
   font-size: 20px;
   font-weight: bold;
   margin-top: 5px;
@@ -292,108 +313,122 @@ nav {
   font-weight: 600;
 
 }
-.korzinbut{
-  color:#F9F4F5;
-  background-color:#58641D;
+
+.korzinbut {
+  color: #F9F4F5;
+  background-color: #58641D;
   padding: 8px 12px;
   border-radius: 6px;
   text-align: center;
   margin-top: 10px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 400;
-  border-style: none;/*короче по-дефолту турган кнопка границасын алып тастайды*/
+  border-style: none;
+  /*короче по-дефолту турган кнопка границасын алып тастайды*/
   transition: background-color 0.3s, color 0.3s;
 }
 
-.korzinbut:hover{
-  background-color:#E4EFE7;
-  color:#58641D;
+.korzinbut:hover {
+  background-color: #E4EFE7;
+  color: #58641D;
 }
 
 
 
-.aksia{
+.aksia {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1px;
   padding: 2px;
-  margin: 0 ;
+  margin: 0;
   align-items: start;
 }
 
-.promotext{
+.promotext {
   margin: 0px;
-  text-transform:unset;
-  color:#ff0707;
+  text-transform: unset;
+  color:red;
   text-align: center;
   width: 100%;
-  font-size:30px;
+  font-size: 30px;
 
-  margin-bottom: 0px; /*"АКЦИИ НА ТОВАРЫ"- текст пен карточкалар ара-кашыктыгы*/
+  margin-bottom: 0px;
+  /*"АКЦИИ НА ТОВАРЫ"- текст пен карточкалар ара-кашыктыгы*/
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 1200;
 }
 
-.promo-container{
-  display: inline-flex;/*шетинен басталады*/
-  flex-direction: column;
- align-items:center;
-  width: 220px;
+.promo-container {
+  display: inline-flex;
+  /*шетинен басталады*/
+  flex-direction: row;
+  /*row-текстти суреттин касына он жагына ал column текстти сурет астына коДы*/
+  align-items: center;
+  width: 450px;
   padding: 5px;
-   background-color: #fdf6f6;
-   border-radius: 15px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-   gap: 3px;/*текст пен фотонын аракашыктыгы*/
-   margin: 5px;/*карточкалар бир биримен ара кашыктыгы*/
-   height: 430px;
-    /* фиксированная высота карточки, чтобы все одинаковые */
-   /* фиксированная высота карточки, чтобы все одинаковые */
-  justify-content: flex-start;
-  overflow: hidden;/*фотоны кыркады*/
+  background-color: #FDFAF6;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  gap: 3px;
+  /*текст пен фотонын аракашыктыгы*/
+  margin: 5px;
+  /*карточкалар бир биримен ара кашыктыгы*/
+  height: 250px;
+  /* фиксированная высота карточки, чтобы все одинаковые */
+  /* фиксированная высота карточки, чтобы все одинаковые */
+  justify-content: left;
+  overflow: hidden;
+  /*фотоны кыркады*/
 }
 
-.promo-container img{
- width:100%; /*фотоны карточкага салды*/
- height: 200px;
- object-fit: cover;
- border-radius: 6px;
- display: block;
+.promo-container img {
+  width: 100%;
+  /*фотоны карточкага салды*/
+  display: block;
+  border-radius: 10px;
+
 }
 
-.aksia{
+.aksia {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.promo-description{
-  
+.promo-description {
+  flex-direction: column;
   margin-bottom: 0px;
   margin-top: 1px;
   flex: 1 1 auto;
   width: 100%;
   box-sizing: border-box;
-  color:#99BC85;
+  color: #5a6a0a;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 500;
 }
-.pr20{
+
+.pr20 {
   font-size: 25px;
-  color: #e9190f;
+  color:#0dcd0d;
   font-display: block;
   justify-content: flex-start;
+  text-align: start;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 600;
+  margin-bottom: 0px;
+  /*20% тен кейинги аракашыкты ап тастайды,
+   то есть 20%-пен текст арасындагы аракашыктыкты ап тастайды*/
 }
-.korzin{
+
+.korzin {
   background-color: #f80000;
-  color:#ffffff;
+  color: #ffffff;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 600;
   padding: 5px 15px;
@@ -402,25 +437,28 @@ nav {
   transition: background-color 0.3s, color 0.3s;
   border-style: none;
 }
-.korzin:hover{
+
+.korzin:hover {
   background-color: #c7c6c6;
-  color:#000000;
+  color: #000000;
 }
 
-.korzina-container{
-background-color: #eaefec;
-height: 100vh;/*полный бир страница кылады размери бойынша*/
-display: flex;
-width: 100%;
+.korzina-container {
+  background-color: #eaefec;
+  height: 100vh;
+  /*полный бир страница кылады размери бойынша*/
+  display: flex;
+  width: 100%;
 }
-.korzina-title{
-  color:#e17973;
-  font-size:50px;
- margin: 0 auto;
+
+.korzina-title {
+  color: #e17973;
+  font-size: 50px;
+  margin: 0 auto;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 900;
- margin-top: 2%;
- text-transform: uppercase;
+  margin-top: 2%;
+  text-transform: uppercase;
 }
 
 
@@ -446,7 +484,7 @@ width: 100%;
 
 
 .foot {
-  background-color:#FDFAF6;
+  background-color: #FDFAF6;
   padding: 10px 20px;
   box-shadow: 0 2px 10px rgba(131, 130, 130, 0.1);
   /*текст осы коршаудын ишинде турады*/

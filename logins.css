@@ -1,0 +1,32 @@
+body{
+  background-color: #E86CA4;
+}
+.voiti{
+  text-align: center;
+  margin: 50px;
+  margin-bottom: 0;
+}
+.input-info{
+  margin: 20px;
+  text-align: center;
+}
+.inputpassword{
+  margin: 10px;
+}
+.gmail{
+  background-color: #f8eaf0;
+  border: none;
+}
+.password{
+  background-color: #f8eaf0;
+  border: none;
+}
+.buttonvoiti{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 120px;
+  height: 20px;
+  background-color:#ff3590;
+  border-radius: 6px;
+}
