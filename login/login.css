@@ -1,0 +1,90 @@
+
+body{
+  background-color:#f9ffc3;
+}
+h2{
+  color:#ff7eb8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.01);
+}
+.register-cont{
+  color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:150px;
+  gap:8px;
+}
+.name-input{
+  background-color: #ffcee4;
+  color:green;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+  margin-bottom: 0;
+  border:none;
+  height:20px;
+  width:180px;
+  border-radius: 2px;
+}
+
+.surname-input{
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffcee4;
+  height:20px;
+  width:180px;
+  color:green;
+  border-radius:2px;
+  border:none;
+  
+}
+
+.number-input{
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffcee4;
+  color:green;
+  width:180px;
+  height:20px;
+  border-radius:2px;
+  border:none;
+  
+}
+.password1{
+   background-color: #ffcee4;
+  color:green;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  
+  border:none;
+  height:21px;
+  width:180px;
+  border-radius: 2px;
+}
+.subbut{
+  margin:10px;
+   background-color: #ff93c4;
+  color:green;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  width:100px;
+  border:black;
+  margin-bottom:0;
+  width:120px;
+  color:white;
+  border-radius: 5px;
+}
+.subbut:hover{
+  background-color:#ff4b9c;
+}
+.autoriz{
+  display: flex;
+  justify-content: center;
+  /*flex-direction: column;*/
+  flex-direction: row;
+  align-items:center;
+  margin-bottom:0;
+  /*display:inline-block;*/
+  gap: 5px;
+}
+a{
+  text-decoration: none;
+  color:rgb(122, 179, 122);
+  gap:-10px;
+}
+
