@@ -10,21 +10,37 @@
 </head>
 <body>
   <div class="register-cont">
+    <form>
     <h2><strong>Создать аккаунт</h2></strong>
     <div class="name">
-      <input type="text" class="name-input" id = "name1"placeholder="name"></div>
+      <input type="text" class="name-input" id = "name1"placeholder="name" required></div>
 
       <div class="surname">
-        <input type ="text" class ="surname-input" id="surname" placeholder="surname"> </div>
+        <input type ="text" class ="surname-input" id="surname" placeholder="surname" required> </div>
         
       <div class="number">
-        <input type="text" class="number-input" id="number" placeholder="number">
+        <label for="user-phone"> </label>
+        <input type="tel" class="number-input" id="number" placeholder="Номер телефона " required>
       </div>
      
         <div class="password">
-        <input type="text" class="password1" id="password" placeholder="type ur password"></div>
+          <label for="user-password"> </label>
+        <input type="password" class="password1" id="password" placeholder="Ваш пароль" required></div>
 
+      <div class="city">
+      <label for="city" class="userrcity">Ваш город:</label>
+      <select id="city" class="selectcity" name="user-city" required>
+      <option disable value="" selected>Не выбрано</option>
+        <option value="almaty">Алматы</option>
+      <option value="shymkent">Шымкент</option>
+      <option value="astana">Астана</option>
+      <option value="karaganda">Караганда</option>
+
+
+      </select>
+      </div>
         <button type="submit" class="subbut" id="submit">Загестрироваться</button>
+        </form>
     <!----<div class="autoriz">
        <p><a href="password/password.html">Забыли пароль?</a></p>
         <p><a href="notaccount/create.html">Нет аккаунта?</a></p>

@@ -87,4 +87,14 @@ a{
   color:rgb(122, 179, 122);
   gap:-10px;
 }
-
+.userrcity{
+  color:green;
+}
+.selectcity{
+  border:none;
+  width:104px;
+  height:20px;
+  color:black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+}
