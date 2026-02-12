@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -7,18 +7,18 @@
   <link rel="shortcut icon" href="./img/malina.png" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
 
-  <!--SWIPER CSS  -->
+  <!--SWIPER CSS-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <!--FONT-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" class="fontbe">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap"
     rel="stylesheet">
 
-    <!--REMIXICON-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
-    <title>FruFresh</title>
+  <!--REMIXICON-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+  <title>FruFresh</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
     <div class="logotip">
       <img src="./img/malina.png" class="phos">
       <p class="name">FruFresh</p>
-      </div>
+    </div>
 
     <div>
       <nav>
@@ -37,45 +37,39 @@
           <li><a href="#fructs">Фрукты</a></li>
           <li><a href="#promo">Акции</a></li>
           <li><a href="#korzina">Корзина</a></li>
-         <!--ICON PROFILE--> 
-         <div class="profile-icon">
-         <li><a href="./login/login.html"><i class="ri-account-circle-fill"></i></a></li>
-        </div>
+          <!--ICON PROFILE-->
+          <div class="profile-icon">
+            <li><a href="./login/login.html"><i class="ri-account-circle-fill"></i></a></li>
+          </div>
         </ul>
       </nav>
     </div>
-     </div>
   </header>
 
   <!--GLAVNAYA-->
   <section id="home" class="hhom">
     <div class="homes">
-      <h1 class="hometext"><strong>УЗНАЙТЕ ВСЁ О ФРУКТАХ:<br> ИХ СВОЙСТВА, ПОЛЬЗА И АКТУАЛЬНЫЕ АКЦИИ</h2></strong>
+      <h1 class="hometext"><strong>УЗНАЙТЕ ВСЁ О ФРУКТАХ:<br> ИХ СВОЙСТВА, ПОЛЬЗА И АКТУАЛЬНЫЕ АКЦИИ</strong></h1>
       <a href="#fructs" class="button-fr">Посмотреть на фрукты</a>
     </div>
-
-
-
   </section>
+
   <!--О нас-->
   <section id="about" class="aboutt">
     <div class="about-us">
       <div class="about-text">
-        <h2>МЫ <a href="#home" class="frush">FruFresh</a> </h2>
+        <h2>МЫ <a href="#home" class="frush">FruFresh</a></h2>
         <p>информационный веб-сайт, посвящённый фруктам и их полезным свойствам.
           Наша цель — познакомить посетителей с разнообразием фруктов, их характеристиками, пользой для здоровья и
           особенностями употребления.
-
           На нашем сайте вы можете найти информацию о популярных и экзотических фруктах, узнать их пищевую ценность,
           витамины и калорийность. Также мы регулярно публикуем акции и специальные предложения.
-
           Мы стремимся сделать информацию простой, понятной и полезной для всех — от школьников до взрослых.</p>
       </div>
     </div>
   </section>
 
-
-   <!--Акции-->
+  <!--Акции-->
   <section id="promo" class="promo-page">
     <div class="background">
       <div class="aksia">
@@ -83,13 +77,11 @@
         <div class="promo-container">
           <img src="img/coconut.jpg">
           <div class="promo-description">
-
             <p class="pr20"><strong> -20% </strong></p>
             <p>Только в этом месяце! При покупке двух кокосов третий в подарок. Наслаждайтесь свежестью и пользой
               кокосов вместе с друзьями и семьёй!</p>
             <button class="korzin">КУПИТЬ</button>
           </div>
-
         </div>
 
         <div class="promo-container">
@@ -101,82 +93,50 @@
             <button class="korzin">КУПИТЬ</button>
           </div>
         </div>
-
       </div>
     </div>
-
   </section>
 
-
-
-  <!--Фрукты  container-->
+  <!--Фрукты container-->
   <section id="fructs" class="fruc">
     <main>
-      <!--SEACRH-->
       <div class="fons">
-        <div class="searchfr">
+        <header class="basket-header">
+          <div class="searchfr">
+            <input type="text" id="search" placeholder="Напиши название фрукта">
+            <button id="foundb" class="but1">Найти</button>
+          </div>
 
-          <input type="text" id="search" placeholder="Напиши называние фрукт">
-          <button id ="foundb" class="but1">Найти</button>
-        </div>
-        <div class="fruct-container">
           <div class="basket-container">
-            <header>
-          <i class="ri-shopping-basket-fill"></i>
+            <button id="cartBtn" class="carticon"><i class="ri-shopping-basket-line"></i></button>
             <span class="quantity">0</span>
-        </div>
+          </div>
         </header>
 
-        <div class="list"></div>
-
-        <div class="card">
-          <h3>Card</h3>
-          <ul class="listCard"></ul>
-          <div class="checkout">
-            <div class="total">0</div>
-            <div class="closeshopping">Close</div>
-          </div>
-        </div>
-          <button class="kk">КУПИТЬ</button>
-
-
-
-          <!--Карточки фруктов будут добавлены здесь с помощью JavaScript-->
-
-
-
-
-
-
-
-
-        </div>
+        <div class="fruct-container"></div>
       </div>
     </main>
   </section>
 
- 
   <!-- KORZINA-->
-  <section id="korzina" class="korzina-page">
-    <div class="korzina-container">
-      <h2 class="korzina-title">КОРЗИНА</h2>
-      <div class="korzina-items" id="korzina-items">
-        <!----> <!-- Товары в корзине будут добавлены здесь с помощью JavaScript
-    </div>
-    <div class="korzina-total">
-      <h3>Итого: <span id="total-price">5</span> тг</h3>
-      <button id="checkout-button" class="checkout-button">Оформить заказ</button>
-    </div> -->
+  <div class="basketoverlay" id="basketpage">
+    <div class="basket">
+      <h2>Корзина</h2>
+      <div class="basket-items" id="basketitem"></div>
+      <button id="closeCart">Закрыть</button>
+    <div class="buy" id="buyfromkorzin">
+      <button id = "buybutton" class="butbtn">Купить</button>
       </div>
     </div>
-  </section>
+  </div>
+
   <footer>
     <div class="foot">
       <div class="foot-container">
-        <p>© 2025 Каталог Фруктов. Все права защищены.</p>
+        <p>©️ 2025 Каталог Фруктов. Все права защищены.</p>
       </div>
       <div class="text2">
-        <p>Контакты: info@fruits.kz | +7 777 123 45 67 </p>
+        <p>Контакты: info@fruits.kz | +7 777 123 45 67</p>
         <p>Создан в учебных целях.</p>
       </div>
     </div>
@@ -186,6 +146,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <!--JS-->
   <script src="script.js"></script>
-  </body>
+</body>
 
 </html>

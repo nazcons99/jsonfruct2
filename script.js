@@ -1,23 +1,35 @@
-//данные фруктов
+// Данные фруктов
 let fruits = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+// Элементы DOM
+const basketpage = document.getElementById("basketpage");
+const basketitem = document.getElementById("basketitem");
+const cartBtn = document.getElementById("cartBtn");
+const closeBtn = document.getElementById("closeCart");
+const searchInput = document.getElementById("search");
+const searchButton = document.getElementById("foundb");
+const quantitySpan = document.querySelector(".quantity");
+
+// Загрузка фруктов из JSON
 async function loadFruits() {
   try {
     const res = await fetch('./fructscontainer.json');
     fruits = await res.json();
-    renderFruits(); // рендер после загрузки
+    renderFruits();
+    updateCartQuantity();
   } catch (e) {
     console.error('Ошибка загрузки JSON:', e);
   }
 }
 
-const input = document.getElementById('search');
-const button = document.getElementById('foundb');
-// Render fruits from the `fruits` array into the .fruct-container
+// Отрисовка карточек фруктов
 function renderFruits() {
   const container = document.querySelector('.fruct-container');
   if (!container) return;
+  
   container.innerHTML = '';
+  
   fruits.forEach(f => {
     const box = document.createElement('div');
     box.className = 'fructbox';
@@ -36,81 +48,135 @@ function renderFruits() {
     const p = document.createElement('p');
     p.innerHTML = f.description;
 
-    const price = document.createElement('price');
+    const price = document.createElement('span');
     price.className = 'fruit-price';
     price.textContent = f.price;
 
-    const korzin = document.createElement('button'); //кнопка создавать етилди
-    korzin.className = 'korzinbut';
-    korzin.textContent = f.korzin;
+    const btn = document.createElement("button");
+    btn.className = "addCartBtn";
+    btn.textContent = f.korzin;
+    btn.onclick = () => addToCart(f);
 
-
-    
     desc.appendChild(h3);
     desc.appendChild(p);
+    desc.appendChild(price);
+    desc.appendChild(btn);
+    
     box.appendChild(img);
     box.appendChild(desc);
-    desc.appendChild(price);
-    desc.appendChild(korzin);
     container.appendChild(box);
-    
   });
 }
 
-function getBoxes() { return document.querySelectorAll('.fructbox');
+// Получение всех карточек
+function getBoxes() {
+  return document.querySelectorAll('.fructbox');
 }
- 
 
-
+// Фильтрация фруктов по поиску
 function filterFruits() {
- 
-  let q = (input.value || '').trim().toLowerCase();
+  const query = searchInput.value.trim().toLowerCase();
 
-  // If query is empty, show all fruits
-  if (!q) {
-    getBoxes().forEach(b => b.style.display = '');
+  if (!query) {
+    getBoxes().forEach(box => box.style.display = '');
+    return;
+  }
+
+  getBoxes().forEach(box => {
+    const name = box.querySelector('.fruit-name')?.textContent.toLowerCase() || '';
+    const description = box.querySelector('.fruit-description p')?.textContent.toLowerCase() || '';
+    const alt = box.querySelector('img')?.alt.toLowerCase() || '';
+    const price = box.querySelector('.fruit-price')?.textContent.toLowerCase() || '';
+    
+    const match = name.includes(query) || description.includes(query) || alt.includes(query) || price.includes(query);
+    box.style.display = match ? '' : 'none';
+  });
+}
+
+// Обработчики поиска
+searchButton.addEventListener('click', filterFruits);
+searchInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') filterFruits();
+});
+searchInput.addEventListener('input', () => {
+  if (!searchInput.value.trim()) {
+    getBoxes().forEach(box => box.style.display = '');
+  }
+});
+
+// Открыть корзину
+function openCart() {
+  if (basketpage) {
+    basketpage.classList.add('active');
+    renderCart();
+  }
+}
+
+// Закрыть корзину
+function closeCart() {
+  if (basketpage) {
+    basketpage.classList.remove('active');
+  }
+}
+
+// Добавить в корзину
+function addToCart(product) {
+  cart.push(product);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartQuantity();
+  renderCart();
+}
+
+// Обновить счетчик товаров
+function updateCartQuantity() {
+  if (quantitySpan) {
+    quantitySpan.textContent = cart.length;
+  }
+}
+
+// Отрисовка корзины
+function renderCart() {
+  if (!basketitem) return;
+  
+  basketitem.innerHTML = '';
+  
+  if (cart.length === 0) {
+    basketitem.innerHTML = '<p>Корзина пуста</p>';
     return;
   }
   
+  cart.forEach((item, index) => {
+    const cartItem = document.createElement('div');
+    cartItem.className = 'cart-item';
+    cartItem.innerHTML = `
+      <span>${item.name} - ${item.price}</span>
+      <button class="remove-btn" data-index="${index}">✕</button>
+    `;
+    basketitem.appendChild(cartItem);
+  });
 
-  // Otherwise show only matching fruits (search in name, description, img alt)
-  getBoxes().forEach(b => {
-    const name = (b.querySelector('.fruit-name')?.textContent || '').toLowerCase();
-    const desc = (b.querySelector('.fruit-description')?.textContent || '').toLowerCase();
-    const alt = (b.querySelector('img')?.alt || '').toLowerCase();
-    const price = (b.querySelector('.fruit-price')?.textContent || '').toLowerCase();
-    const korzin = (b.querySelector('.korzinbut')?.textContent || '').toLowerCase();
-    const match = name.includes(q) || desc.includes(q) || alt.includes(q) || price.includes(q) || korzin.includes(q);
-    b.style.display = match ? '' : 'none';
+  // Удаление товара из корзины
+  document.querySelectorAll('.remove-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const index = parseInt(this.dataset.index);
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartQuantity();
+      renderCart();
+    });
   });
 }
 
-// initial render
+// Закрытие корзины по клику вне окна
+window.addEventListener('click', (e) => {
+  if (basketpage && e.target === basketpage) {
+    closeCart();
+  }
+});
+
+// Инициализация событий
+if (cartBtn) cartBtn.addEventListener('click', openCart);
+if (closeBtn) closeBtn.addEventListener('click', closeCart);
+
+// Запуск
 loadFruits();
-
-button.addEventListener('click', filterFruits);
-input.addEventListener('keyup', (e) => { if (e.key === 'Enter') filterFruits(); });
-input.addEventListener('input', () => { if (!input.value.trim()) getBoxes().forEach(b => b.style.display = ''); });
- 
-
-  document.querySelector('#searchfr')
-    addEventListener('input', filterList);
-
-    function filterList(){
-      const searchInputv = document.querySelector
-      ('#searchfr');
-      const filter = searchInputv.value.toLowerCase();
-      const listItems = document.querySelectorAll
-      ('.foundb');
-
-      listItems.forEach((item) =>{
-        let text = item.textContent;
-        if(text.toLowerCase().includes
-        (filter.toLowerCase())){
-          item.style.display = '';
-        }
-        else{
-          item.style.display = 'none';
-        }
-      });
-    }

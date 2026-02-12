@@ -24,6 +24,23 @@ body {
   width: 30px;
 
 }
+.basket-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.basket-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 
 .name {
   color:#525151;
@@ -223,12 +240,16 @@ nav {
 }
 
 .searchfr {
- 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
   border-radius: 8px;
-  padding: 5px;
-  width: 220px;
-  margin: 20px auto;
-  /*страницанын басымен расстояниеси*/
+  padding: 10px;
+  width: auto;
+  margin: 0 auto;
   border: none;
 }
 
@@ -236,6 +257,25 @@ nav {
   background-color: #e9190f;
   color: #E4EFE7;
   border-radius: 6px;
+}
+
+.addCartBtn {
+  color: #F9F4F5;
+  background-color: #aed581;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  border-style: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.addCartBtn:hover {
+  background-color: #E4EFE7;
+  color: #58641D;
 }
 
 .fons {
@@ -464,9 +504,185 @@ nav {
 }
 
 
+/* ===== КОРЗИНА ===== */
 
+/* Кнопка корзины */
+.carticon {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
+.carticon i {
+  font-size: 22px;
+  color: #4a6fa5;
+}
 
+.carticon:hover {
+  background: #f0f0f0;
+}
+
+/* Счетчик */
+.quantity {
+  background: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  position: relative;
+  top: -12px;
+  right: 12px;
+}
+
+/* Оверлей */
+.basketoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+.basketoverlay.active {
+  display: flex;
+}
+
+/* Окно корзины */
+.basket {
+  width: 350px;
+  max-width: 90%;
+  height: 100vh;
+  background: white;
+  padding: 25px;
+  overflow-y: auto;
+  animation: slide 0.2s ease;
+}
+
+@keyframes slide {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.basket h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #228a00;
+}
+
+/* Товары в корзине */
+.basket-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 3px solid #228a00;
+}
+
+.cart-item span {
+  font-size: 15px;
+  color: #333;
+}
+
+/* Кнопка удаления */
+.remove-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.remove-btn:hover {
+  color: #ff6b6b;
+}
+
+/* Кнопка закрытия */
+#closeCart {
+  width: 100%;
+  padding: 12px;
+  background-color:#f4d9b5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#closeCart:hover {
+  background: #FDFAF6;
+  color:#000000;
+}
+.buybutton{
+  width:100%;
+  background-color: red;
+  padding:12px;
+  color:white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+/* Пустая корзина */
+.basket-items p {
+  text-align: center;
+  color: #999;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+.buy {
+  margin:10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.buy p {
+  text-align: center;
+  color: #999;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+.butbtn{
+  text-align: center;
+  background-color: red;
+  color:white;
+  border:none;
+  height: 40px;
+  width: 340px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+.butbtn:hover{
+  background-color: rgb(255, 229, 229);
+  color:black;
+}
 
 
 
